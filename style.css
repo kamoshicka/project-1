@@ -1,0 +1,996 @@
+@charset "utf-8";
+
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Fix mobile Safari increase font-size on landscape mode */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu,
+summary {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-inline-size: 100%;
+    max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+    -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+    all: revert;
+    box-sizing: border-box;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+    all: revert;
+    box-sizing: border-box;
+}
+
+/* Remove details summary webkit styles */
+::-webkit-details-marker {
+    display: none;
+}
+
+/* リセット */
+/* リセット */
+/* リセット */
+/* リセット */
+/* リセット */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.container {
+    max-width: 1112px;
+    margin: 0 auto;
+}
+
+.reservation {
+    height: 100px;
+    width: 100%;
+    display: flex;
+}
+
+.titlelogo {
+    width: 280px;
+    height: 85px;
+    align-self: center;
+}
+
+.headerright {
+    display: flex;
+    flex-direction: row;
+    flex: 3;
+    justify-content: flex-end;
+}
+
+.headerright ul {
+    align-self: center;
+    color: #6c757d;
+    margin-right: 28px;
+}
+
+#phonesmall {
+    font-size: 12px;
+}
+
+#phonebig {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+button {
+    width: 116px;
+    font-size: 18px;
+    background-color: #677077;
+    color: white;
+    border-radius: 8px;
+    height: 48px;
+    align-self: center;
+    text-align: center;
+    line-height: 16px;
+}
+
+.menu {
+    display: flex;
+    background: #343a40;
+    color: #AAAAAA;
+    height: 56px;
+    width: 100%;
+    line-height: 56px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.menu ul {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    /* padding: 0 3em 0 3em; */
+}
+
+
+.mainvisual {
+    background-image: url(top-image.jpg);
+    background-size: cover;
+    height: 600px;
+    padding-top: 66px;
+}
+
+.harowa {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 554px;
+    background: white;
+    margin-left: auto;
+    padding-left: 22px
+    
+}
+
+.harowa h1 {
+    font-size: 54px;
+    font-weight: 300;
+    padding: 20px 0 8px 0;
+}
+
+.harowa p {
+    font-size: 20px;
+    font-weight: 300;
+    padding-bottom: 24px;
+    border-bottom: solid 1px rgba(0, 0, 0, .1);
+    ;
+    
+}
+
+.harowa small {
+    font-weight: 400;
+    font-size: 14px;
+    padding-top: 16px;
+    padding-bottom: 32px;
+}
+
+.newstitle {
+    margin: 50px 0 28px 0;
+}
+
+h2 {
+    display: inline-block;
+    font-size: 32px;
+    padding-left: 16px;
+    border-left: #aaaaaa 7px solid;
+}
+
+.h2sub {
+    display: inline-block;
+    padding-left: 16px;
+    color: #aaaaaa;
+}
+
+.newspart {
+    margin-bottom: 14px;
+}
+
+.newsdate {
+    display: inline-block;
+    color: white;
+    background-color: #6c757d;
+    border-radius: 4px;
+    margin-right: 14px;
+    width: 92px;
+    padding: 8px 0 8px 0;
+    text-align: center;
+}
+
+h3 {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.newspart p {
+    display: inline-block;
+    color: gray;
+}
+
+.newslist {
+    padding-bottom: 75px;
+}
+
+.ad p {
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+#message {
+    background-color: #f8f9fa;
+    width: 100%;
+    position: relative;
+    height: 500px;
+}
+
+#message .container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.messageinner img {
+    margin: 48px 0 65px auto;
+
+}
+
+h4 {
+    display: inline;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 60px 0 36px 0;
+
+}
+
+.description {
+    background-color: white;
+    opacity: .5;
+    width: 636px;
+    margin: 126px 0 42px auto;
+    position: absolute;
+    padding: 3rem;
+    line-height: 22px;
+}
+
+.description p {
+    padding-bottom: 22px;
+}
+
+.messageleft {
+    left: 0;
+    display: flex;
+
+}
+
+.messageinner {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    position: relative;
+}
+
+
+#operationtitle {
+    margin-top: 32px;
+}
+
+.courses {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    margin:0 -16px 0 -16px;
+}
+
+.course {
+    display: flex;
+    margin: 32px 0 0 0;
+    
+    max-width: 100%;
+    text-align: center;
+    flex-direction: column;
+    border: solid 1px rgb(211, 211, 211);
+    border-radius: 8px;
+    box-shadow: 1px 3px 2px rgb(240, 240, 240);
+}
+
+.courseinner {
+    /* position: relative; */
+    display: flex;
+    flex-direction: row;
+    width: 33%;
+    flex: 0 0 33%;
+    padding: 0 16px 0 16px;
+}
+
+h5 {
+    font-size: 28px;
+    font-weight: 500;
+    align-self: center;
+}
+
+.course p {
+    margin: 14px 32px 0 32px;
+    padding-bottom: 24px;
+    line-height: 24px;
+}
+
+#about {
+    background-color: #f8f9fa;
+    width: 100%;
+    padding-bottom: 32px;
+}
+
+.abouttitle {
+    padding: 94px 0 32px 0;
+}
+
+.aboutcontent h6 {
+    margin: 20px 0 20px 0;
+    font-weight: bold;
+    font-size: 28px;
+    color: #6c757d;
+}
+
+.aboutcontent p {
+    padding-bottom: 100px;
+    color: #6c757d;
+}
+
+.pictures .container {
+    column-count: 3;
+    /* max-width: 1100px; */
+    margin: 0 auto;
+}
+
+.pictures .container img {
+    background: white;
+    border: solid gainsboro 1px;
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: rgb(235, 235, 235) 0 1px 2px 1px;
+    margin: 32px 16px 12px 0;
+}
+
+#greeting {
+    background-color: #f8f9fa;
+    margin-top: 48px;
+    padding-top: 94px;
+}
+
+.greetingtext {
+    max-width: 70%;
+}
+
+#greeting .container {
+    display: flex;
+    flex-direction: row;
+}
+
+.name h7 {
+    display: inline-block;
+    font-size: 24px;
+    padding: 32px 22px 8px 0;
+}
+
+.name span {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.greetingtext {
+    flex: 0 0 66%;
+    width: 66%;
+}
+
+.doctorimage {
+    flex: 0 0 33%;
+    width: 33%;
+}
+#greeting img {
+    width: 100%;
+    background: white;
+    border: solid gainsboro 1px;
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: rgb(235, 235, 235) 0 1px 2px 1px;
+}
+
+h8 {
+    display: block;
+    font-weight: 600; 
+    font-size: 22px;
+    padding: 22px 0 4px 0;
+}
+
+h9 {
+    font-size: 22px;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.profile {
+    padding-bottom: 22px;
+}
+
+.profileflex {
+    display: flex;
+    flex: 0 0 50%;
+    padding-bottom: 116px;
+}
+
+.profileleft {
+    width: 50%;
+}
+
+
+#introduction {
+    background-color: #f8f9fa;
+    padding-top: 54px;
+    padding-bottom: 48px;
+    border-top: rgb(204, 204, 204) solid 1px;
+}
+.staffs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 36px;
+}
+.staffcard {
+    width: 31%;
+    flex: 0 0 31%;
+    background-color: white;
+    padding: 18px 18px;
+    border-radius: 6px;
+    box-shadow: rgb(235, 235, 235) 0 1px 2px 1px;
+}
+
+h10 {
+    font-size: 32px;
+    padding-top: 16px;
+}
+
+.job {
+    color: #6c757d;
+    padding-bottom: 24px;
+}
+
+.linkrecruiting {
+    margin: 32px 0 16px 0;
+    font-size: 20px;
+    display: flex;
+    width: 100%;
+    height: 48px;
+    background-color: #f8f9fa;
+    border: solid black 1px;
+    border-radius: 6px;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.linkrecruiting:hover {
+    background-color: #343a40;
+    border-color: transparent;
+    color: white;
+}
+
+#schedule {
+    margin: 48px 0 48px 0;
+}
+.scheduleinside {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.table {
+    table-layout: fixed;
+}
+.scheduleleft {
+    padding-top: 36px;
+    flex: 0 0 48%;
+    width: 48%;
+    margin-right: 16px;
+}
+
+.week {
+    width: 100%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+table {
+    white-space: nowrap;
+}
+
+.week th {
+    text-align: center;
+    padding: .8rem;
+    border: solid 1px rgb(199, 199, 199);
+}
+
+#leftunder1 {
+    margin: 16px 0 16px 0;
+}
+
+.leftunder ul {
+    margin: 8px 0 24px 0;
+}
+
+.lighter {
+    font-size: 12px;
+}
+
+.scheduleright {
+    flex: 0 0 48%;
+    width: 48%;
+    padding-top: 36px;
+    margin-left: 16px;
+}
+
+.calendar {
+    width: 100%;
+}
+
+.calendar  th{
+    border: solid rgb(199, 199, 199) 1px;
+    /* padding: 16px 48px 16px 8px; */
+    padding: .8rem;
+}
+
+.calendar td {
+    border-top: 1px solid rgb(199, 199, 199);
+    /* padding: 16px 0 16px 0; */
+    padding: .8rem;
+}
+
+.calendarleft {
+    border-left: 1px solid rgb(199, 199, 199);
+}
+
+.calendarright {
+    border-right: 1px solid rgb(199, 199, 199);
+    text-align: right;
+}
+
+.calendarmiddle {
+    text-align: center;
+    font-weight: bold;
+}
+
+.dayoff {
+    background-color: red;
+    color: white;
+}
+
+.dayoffred {
+    color: red;
+}
+
+
+.scheduleright p {
+    padding-top: 16px;
+}
+
+.reservationbutton {
+    margin: 16px 0 16px 0;
+    width: 100%;
+    text-align: center;
+    border: solid #6c757d 1px;
+    background-color: white;
+    color: #6c757d;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.reservationbutton:hover {
+    background-color: #6c757d;
+    color: white;
+    border-color: transparent;
+}
+
+#access {
+    background-color:#f8f9fa;
+}
+#access .container{
+    padding: 48px 0 32px 0;
+}
+
+.maphelp {
+    margin-top: 4px;
+    padding-bottom: 54px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footerwidth {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 48px 0 48px 0;
+}
+
+footer {
+    background-color:#e6ede9;
+    width: 100%;
+}
+
+address {
+    margin-top: 16px;
+}
+strong {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.footerright {
+    background-color: white;
+    padding:16px;
+    border-radius: 4px;
+    width: 50%;
+    flex: 0 0 50%;
+}
+
+.footerleft {
+    width: 50%;
+    flex: 0 0 50%;
+}
+
+.footerend {  
+    display: inline-block;
+    background-color:#343a40;
+    color: white;
+    height: 60px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.footerend p {
+    display: inline-block;
+    width: 92%;
+    text-align: center;
+    line-height: 60px;
+}
+
+
+.totop {
+    display: inline-block;
+    background-color: #6c757d;
+    height: 60px;
+    float: right;
+    width: 8%;
+    text-align: center;
+    line-height: 60px;
+}
+
+.arrow{
+	position: relative;
+	display: inline-block;
+	color: #000;
+	vertical-align: middle;
+	text-decoration: none;
+    transform: rotate(-90deg);
+    font-size: 18px;
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.toggle_contents {
+    display: none;
+
+}
+
+
+/* 　　　 990px　　　　*/
+/* 　　　　990px 　　　*/
+/*  　　　　　　　　　*/
+
+@media screen and (max-width: 1200px) {
+.container {
+    max-width: 930px;
+    margin: 0 auto;
+}
+
+.harowa {
+    max-width: 460px;
+}
+
+.messageinner img {
+    width: 450px;
+}
+
+.description {
+    width: 532px;
+}
+
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+
+    .container {
+        max-width: 690px;
+        margin: 0 auto;
+    }
+
+    .harowa {
+        max-width: 340px;
+    }
+
+    .messageinner img {
+        width: 330px;
+    }
+
+    .description {
+        width: 390px;
+    }
+
+    .courseinner {
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        flex: 0 0 50%;
+        padding: 0 16px 0 16px;
+    }
+
+    .staffcard {
+        width: 47%;
+        flex: 0 0 47%;
+        background-color: white;
+        padding: 18px 18px;
+        border-radius: 6px;
+        box-shadow: rgb(235, 235, 235) 0 1px 2px 1px;
+    }
+
+    .week {
+        width: 100%;
+    }
+
+    .calendar {
+        width: 100%;
+    }
+}
+
+/* SP版 */
+/* SP版 */
+/* SP版 */
+@media screen and (max-width: 767px) {
+    .container {
+        max-width: 510px;
+        margin: 0 auto;
+    }
+
+    .harowa {
+        display: flex;
+        flex-direction: column;
+        
+        width: 510px;
+        background: white;
+        margin-left: auto;
+        padding-left: 22px;
+}
+
+.headerright ul {
+display: none;
+}
+.menu .container li{
+    display: none;
+}
+
+.newsdate {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.messageleft h4 {
+    position: absolute;
+}
+
+.messageinner img {
+    width: 100%;
+}
+
+.courses {
+    display: block;
+}
+
+.courseinner {
+    width: 100%;
+}
+
+.greeting .container {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.doctorimage {
+    width: 100%;
+}
+
+.staffs {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.staffcard {
+    width: 100%;
+}
+
+.footerwidth {
+    flex-direction: column;
+}
+
+.footerright {
+    width: 100%;
+}
+
+.footerleft {
+    width: 100%;
+}
+
+.footerleft img {
+    width: 100%;
+}
+
+/* アコーディオン */
+/* アコーディオン */
+/* アコーディオン */
+
+.openbtn span{
+    position: absolute;
+    left: 8px;
+    height: 2px;
+    border-radius: 2px;
+    background: #9a9da0;
+    width: 32px;
+  }
+
+  .openbtn{
+    display: block;
+	position: absolute;
+	cursor: pointer;
+    top: 105px;
+    width: 50px;
+    height:43px;
+	border-radius: 5px;
+    border: 1px solid rgb(83, 83, 83);
+    
+}
+
+.openbtn span:nth-of-type(1) {
+	top:13px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:21px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:29px;
+}
+
+.openbtn.open {
+        border-bottom: 1px solid gray;
+  }
+
+.openbtn::after {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 11px;
+    top: 50%;
+    border: white;
+    transform: translateY(-50%);
+    right: 20px;
+    transition: transform .2s;
+  }
+  .toggle_contents {
+    position: relative;
+    display: none;
+    
+    width: 100%;
+    background-color:#343a40;
+}
+
+#toggle_menu {
+    display: block;
+
+}
+
+#toggle_menu ul {
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+#toggle_menu ul li {
+    text-align: center;
+    font-size: 16px;
+    color:#AAAAAA;
+    padding-bottom: 18px;
+    cursor: pointer;
+}
+
+#toggle_menu ul li:hover {
+    color: white;
+}
+
+.toggle_contents ul {
+    color: white;
+    text-align: center;
+    padding-bottom: 8px;
+}
+}
